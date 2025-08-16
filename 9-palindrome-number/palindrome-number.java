@@ -3,20 +3,21 @@ class Solution {
         if(x<0){
             return false;
         }
-        int temp=x;
-        int rev=0;
+        int div=1;
+        while(x/div>=10){
+            div=div*10;
+        }
         while(x!=0){
-
-            int ld=x%10;
-            rev=rev*10+ld;
+            int first=x/div;
+            int last=x%10;
+            if(first!=last){
+                return false;
+            }
+            x=x%div;
             x=x/10;
+            div=div/100;
         }
-        if(temp==rev){
-            return true;
-            
-        }
-        else{
-            return false;
-        }
+        return true;
     }
+    
 }
