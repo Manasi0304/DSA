@@ -3,21 +3,23 @@ class Solution {
         if(x<0){
             return false;
         }
-        int div=1;
-        while(x/div>=10){
-            div=div*10;
+        int rev=reverseNumber(x);
+        if(rev==x){
+            return true;
         }
-        while(x!=0){
-            int first=x/div;
-            int last=x%10;
-            if(first!=last){
-                return false;
-            }
-            x=x%div;
-            x=x/10;
-            div=div/100;
+        return false;
+
+    }
+    public static int reverseNumber(int n){
+       
+        int rn=0;
+        while(n!=0){
+             int ld=n%10;
+             rn=rn*10+ld;
+             n=n/10;
         }
-        return true;
+        return rn;
+
     }
     
 }
