@@ -11,7 +11,6 @@ class Solution {
 
     }
     public static int reverseNumber(int n){
-       
         int rn=0;
         while(n!=0){
              int ld=n%10;
@@ -19,7 +18,6 @@ class Solution {
              n=n/10;
         }
         return rn;
-
     }
     
 }
